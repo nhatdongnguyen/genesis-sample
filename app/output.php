@@ -98,7 +98,7 @@ function genesis_sample_css() {
 			position: static;
 		}
 		'
-	: '';
+		: '';
 
 	$css .= ( has_custom_logo() && ( 350 !== $logo_max_width ) ) ? sprintf(
 		'
@@ -133,7 +133,7 @@ function genesis_sample_css() {
 			}
 		}
 		'
-	: '';
+		: '';
 
 	$css .= ( has_custom_logo() && $logo_padding && ( 1 < $logo_effective_height ) ) ? sprintf(
 		'

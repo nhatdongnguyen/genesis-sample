@@ -17,6 +17,7 @@ add_filter( 'genesis_theme_settings_defaults', 'genesis_sample_theme_defaults' )
  * @since 2.2.3
  *
  * @param array $defaults Original theme settings defaults.
+ *
  * @return array Modified defaults.
  */
 function genesis_sample_theme_defaults( $defaults ) {
@@ -68,6 +69,7 @@ add_filter( 'simple_social_default_styles', 'genesis_sample_social_default_style
  * @since 1.0.0
  *
  * @param array $defaults Social style defaults.
+ *
  * @return array Modified social style defaults.
  */
 function genesis_sample_social_default_styles( $defaults ) {
