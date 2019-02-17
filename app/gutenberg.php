@@ -20,7 +20,7 @@ function genesis_sample_enqueue_gutenberg_frontend_styles() {
 
 	wp_enqueue_style(
 		'genesis-sample-gutenberg',
-		get_stylesheet_directory_uri() . '/lib/gutenberg/front-end.css',
+		get_stylesheet_directory_uri() . '/app/gutenberg/front-end.css',
 		array( $child_theme_slug ),
 		CHILD_THEME_VERSION
 	);
@@ -49,22 +49,25 @@ add_filter( 'body_class', 'genesis_sample_blocks_body_classes' );
  * Adds body classes to help with block styling.
  *
  * - `has-no-blocks` if content contains no blocks.
- * - `first-block-[block-name]` to allow changes based on the first block (such as removing padding above a Cover block).
+ * - `first-block-[block-name]` to allow changes based on the first block (such as removing padding above a Cover
+ * block).
  * - `first-block-align-[alignment]` to allow styling adjustment if the first block is wide or full-width.
  *
  * @since 2.8.0
  *
  * @param array $classes The original classes.
+ *
  * @return array The modified classes.
  */
 function genesis_sample_blocks_body_classes( $classes ) {
 
-	if ( ! is_singular() || ! function_exists( 'has_blocks' ) || ! function_exists( 'parse_blocks') ) {
+	if ( ! is_singular() || ! function_exists( 'has_blocks' ) || ! function_exists( 'parse_blocks' ) ) {
 		return $classes;
 	}
 
 	if ( ! has_blocks() ) {
 		$classes[] = 'has-no-blocks';
+
 		return $classes;
 	}
 
@@ -87,7 +90,7 @@ function genesis_sample_blocks_body_classes( $classes ) {
 add_theme_support( 'editor-styles' );
 
 // Enqueue editor styles.
-add_editor_style( '/lib/gutenberg/style-editor.css' );
+add_editor_style( '/app/gutenberg/style-editor.css' );
 
 // Adds support for block alignments.
 add_theme_support( 'align-wide' );
